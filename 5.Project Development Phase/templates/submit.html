@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Smart Lender</h1>
+
+    <h2>Loan Prediction Result</h2>
+
+    {% if "Approved" in prediction %}
+
+    <div class="success-card">
+
+        <h2>{{ prediction }}</h2>
+
+        <p>
+            Congratulations! Based on the applicant's information,
+            the loan is likely to be <strong>approved</strong>.
+        </p>
+
+    </div>
+
+    {% else %}
+
+    <div class="reject-card">
+
+        <h2>{{ prediction }}</h2>
+
+        <p>
+            Based on the applicant's information,
+            the loan is likely to be <strong>rejected</strong>.
+            You may improve the applicant profile and try again.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/predict">
+        <button>Predict Another Loan</button>
+    </a>
+
+    <br><br>
+
+    <a href="/">
+        <button>Home</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>
