@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Lender</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<button id="theme-btn" onclick="toggleTheme()">
+    Dark Mode
+</button>
+
+<div class="container">
+
+    <h1>Smart Lender</h1>
+
+    <h2>Loan Approval Prediction System</h2>
+
+    <p>
+
+        Welcome to the Smart Lender application.
+
+        This system predicts whether a loan application is
+
+        Approved or Rejected using Machine Learning.
+
+    </p>
+
+    <br>
+
+    <a href="/predict">
+        <button>Predict Loan</button>
+    </a>
+
+</div>
+
+<script>
+
+function toggleTheme(){
+
+    document.body.classList.toggle("dark");
+
+    let btn=document.getElementById("theme-btn");
+
+    if(document.body.classList.contains("dark"))
+
+        btn.innerHTML="Light Mode";
+
+    else
+
+        btn.innerHTML="Dark Mode";
+
+}
+
+</script>
+
+</body>
+
+</html>
